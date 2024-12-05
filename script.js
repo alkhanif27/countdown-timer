@@ -19,14 +19,12 @@ function startTimer() {
   let minutes = parseInt(inputMinutes.value) || 0;
   let seconds = parseInt(inputSeconds.value) || 0;
 
-  console.log(startTimer)
-
   //convert total time ke second
-  let totalTimeInSeconds = hours * 3.6 + minutes * 60 + seconds;
+  let totalTimeInSeconds = hours * 3600 + minutes * 60 + seconds;
 
   //if no time is input, stop the function
   if (totalTimeInSeconds <= 0) {
-    alert("Please enter a Valid TImer");
+    alert("Please enter a Valid Time");
     return;
   }
   //clear input after time start
@@ -68,8 +66,5 @@ startButton.addEventListener("click", () => {
   //stop any running timer
   clearInterval(countdownInterval);
   //start a new timer
-  startTimer;
+  startTimer();
 });
-
-
-console.log("runnn")
